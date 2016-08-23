@@ -202,9 +202,7 @@ public class KoalaDownloadProxy implements IKoalaDownloadDashboard {
 
     @Override
     public void destroy() {
-        if(KoalaDownloadClient.getInstance().isConnected()){
-            KoalaDownloadClient.getInstance().releaseDashboard(mKey, mConfig);
-        }
+        KoalaDownloadClient.getInstance().releaseDashboard(mKey, mConfig);
         mActionList.clear();
         mActionList = null;
     }

@@ -55,9 +55,7 @@ public class KoalaDownloadClient implements ServiceConnection {
     }
 
     public void releaseDashboard(String key, KoalaConfig config){
-        if(this.mBinder == null){
-            throw new IllegalArgumentException("binder is null!");
-        }
+        if(this.mBinder == null) return;
         getDashboard(key, config).destroy();
         this.mBinder.releaseDashboard(key);
     }
